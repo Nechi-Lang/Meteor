@@ -1,3 +1,5 @@
-import test;
+write("Hello, World!");
+write("no line", false);
 
-write("Hello!", true);
+// Comment
+write("");

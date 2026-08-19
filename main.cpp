@@ -43,15 +43,12 @@ int main(int argc, char* argv[]) {
     std::string source = buffer.str();
 
     try {
-        // Lexer
         Lexer lexer(source);
         auto tokens = lexer.tokenize();
 
-        // Parser
         Parser parser(std::move(tokens));
         auto program = parser.parse();
 
-        // Interpreter
         Interpreter interpreter(program.get());
         interpreter.interpret();
 

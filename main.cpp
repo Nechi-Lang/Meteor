@@ -9,7 +9,9 @@
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
-        std::cerr << "Usage: meteor <file.mt>\n";
+        std::cerr << "\033[33mUsage: meteor <file.mt>\n\033[0m";
+        std::cerr << "Flags:\n";
+        std::cerr << "--help - print help information\n";
         return 1;
     }
 
@@ -24,6 +26,15 @@ int main(int argc, char* argv[]) {
         file << "write(\"Hello, World!\");\n";
 
         std::cout << "Meteor: created config.mt\n";
+
+        return 0;
+    }
+    else if (argc == 2 && std::string(argv[1]) == "--help") {
+        std::cout << "\n\n\033[32mHELP INFORMATION\n\033[0m";
+        std::cout << "\033[33mFUNCTIONS:\033[0m\n";
+        std::cout << "meteor new_cfg - create new config.mt with \"Hello, World!\" program\n\n";
+        std::cout << "\033[33mFLAGS:\033[0m\n";
+        std::cout << "--help - print help information about functions and flags of this interpreter\n\n\n";
 
         return 0;
     }
